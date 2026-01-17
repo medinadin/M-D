@@ -364,3 +364,15 @@ footer p { color: var(--text-light-grey); margin-bottom: 10px; }
         height: 200px; /* Un poco más bajas para que entren más en pantalla */
     }
 }
+/* Corrección para dispositivos táctiles */
+@media (max-width: 768px) {
+
+    .gallery-item .overlay {
+        opacity: 1;              /* Siempre visible */
+        background: rgba(0,0,0,0.6);
+    }
+
+    .gallery-item img {
+        transform: scale(1);     /* Evita zoom raro en móvil */
+    }
+}
