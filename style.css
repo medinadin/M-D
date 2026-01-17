@@ -330,4 +330,37 @@ footer p { color: var(--text-light-grey); margin-bottom: 10px; }
 @media (max-width: 600px) {
     .portfolio-grid { grid-template-columns: 1fr 1fr; }
     .portfolio { padding: 50px 5%; }
+
+}
+/* Corrección para dispositivos móviles (Táctiles) */
+@media (max-width: 768px) {
+    
+    /* Hacemos que la información sea visible siempre en móviles */
+    .portfolio-info {
+        bottom: 0 !important; /* Forzamos a que esté visible */
+        opacity: 1 !important;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.8)); /* Fondo más oscuro para leer mejor */
+        padding: 15px 10px;
+    }
+
+    .portfolio-info h4 {
+        color: var(--primary); /* El texto en amarillo para que resalte */
+        font-size: 0.8rem;
+    }
+
+    /* Quitamos el filtro gris en móviles para que las fotos luzcan de una */
+    .portfolio-item img {
+        filter: grayscale(0%);
+        transform: scale(1) !important;
+    }
+
+    /* Ajustamos el tamaño de la grilla para que entren 2 fotos por fila y no se vea gigante */
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .portfolio-item {
+        height: 200px; /* Un poco más bajas para que entren más en pantalla */
+    }
 }
